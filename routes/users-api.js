@@ -13,7 +13,9 @@ const db = require('../db/connection');
 // Define pool object using db module
 const pool = db;
 
+//Getting all
 router.get('/', (req, res) => {
+  res.send('Hello World')
   userQueries.getUsers()
     .then(users => {
       res.json({ users });
@@ -25,7 +27,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// Create a new user
+// Creating one
 router.post("/", (req, res) => {
   const user = req.body;
   user.password = bcrypt.hashSync(user.password, 12);
@@ -99,6 +101,10 @@ router.get("/me", (req, res) => {
     .catch((e) => res.send(e));
 });
 
-module.exports = router;
+//Deleting User
+router.delete("/id", (req, res) => {
+
+
+})
 
 module.exports = router;
