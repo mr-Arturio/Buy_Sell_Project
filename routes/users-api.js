@@ -13,41 +13,74 @@ const db = require('../db/connection');
 // Define pool object using db module
 const pool = db;
 
-//Getting all
+//Getting all users
 router.get('/', (req, res) => {
-  res.send('Hello World')
+  res.send('Hello Worlds')
   userQueries.getUsers()
     .then(users => {
-      res.json({ users });
+      res.json(users);
     })
     .catch(err => {
       res
-        .status(500)
-        .json({ error: err.message });
+      .status(500)
+      .json({ error: err.message });
     });
 });
 
-// Creating one
-router.post("/", (req, res) => {
-  const user = req.body;
-  user.password = bcrypt.hashSync(user.password, 12);
-
-
-  database.addUser(user)
-    .then((user) => {
+//Get a single user by id
+router.get('/users/:id', (req, res) => {
+  const id = req.params.id;
+  userQueries.getUserById(id)
+    .then(user => {
       if (!user) {
-        return res.send({ error: "error" });
+        res
+        .status(404)
+        .json({ error: `User with ID ${id} not found` });
+      } else {
+        res.json(user);
       }
-
-      req.session.userId = user.id;
-      res.send("🤗");
     })
-    .catch((e) => res.send(e));
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
 });
 
-// Log a user in
-router.post("/login", (req, res) => {
-  const email = req.body.email;
+//Create a new user
+router.post('/users', (req, res) => {
+  const { username, password, avatar } = req.body;
+  userQueries.createUser(username, password, avatar)
+    .then(user => {
+      res.status(201).json(user);
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+});
+
+//Update an existing user
+router.put('/users/:id', (req, res) => {
+  const id = req.params.id;
+  const { username, password, avatar } = req.body;
+  userQueries.updateUser(id, username, password, avatar)
+    .then(user => {
+      if (!user) {
+        res.status(404).json({ error: `User with ID ${id} not found` });
+      } else {
+        res.json(user);
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+// Route for logging in a user
+router.post('/login', (req, res) => {
+   const email = req.body.email;
   const password = req.body.password;
 
 
@@ -71,40 +104,22 @@ router.post("/login", (req, res) => {
   });
 });
 
-// Log a user out
-router.post("/logout", (req, res) => {
+// Route for logging out a user
+router.post('/logout', (req, res) => {
   req.session.userId = null;
-  res.send({});
+   res.send({});
 });
 
-// Return information about the current user (based on cookie value)
-router.get("/me", (req, res) => {
-  const userId = req.session.userId;
-  if (!userId) {
-    return res.send({ message: "not logged in" });
-  }
-
-  database.getUserWithId(userId)
-    .then((user) => {
-      if (!user) {
-        return res.send({ error: "no user with that id" });
-      }
-
-      res.send({
-        user: {
-          name: user.name,
-          email: user.email,
-          id: userId,
-        },
-      });
+//Delete a user
+router.delete('/users/:id', (req, res) => {
+  const id = req.params.id;
+  userQueries.deleteUser(id)
+    .then(() => {
+      res.status(204).send();
     })
-    .catch((e) => res.send(e));
+    .catch(err => {
+      res.status(500).json({ error: err.message });
+    });
 });
-
-//Deleting User
-router.delete("/id", (req, res) => {
-
-
-})
 
 module.exports = router;
