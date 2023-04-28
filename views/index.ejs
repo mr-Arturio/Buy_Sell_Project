@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- supplied code -->
 <head>
   <title>Home Page</title>
 
@@ -13,12 +14,98 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
+
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
+<!-- supplied code -->
 
 <body>
-  <h1>Have fun! 🥔</h1>
+
+  <!-- header link -->
+  <%- include('partials/header') %>
+
+  <!-- main content -->
+  <h1>Featured list</h1>
+
+  <!-- featured list -->
+  <div class="featured-list">
+
+    <!-- Item 1 -->
+    <div class="product-box">
+     <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+      <div class="product-info">
+       <text>title</text>
+       <text>price</text>
+       <!-- <text>description</text> -->
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="product-box">
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+       <div class="product-info">
+        <text>title</text>
+        <text>price</text>
+        <!-- <text>description</text> -->
+       </div>
+     </div>
+
+     <!-- Item 3 -->
+     <div class="product-box">
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+       <div class="product-info">
+        <text>title</text>
+        <text>price</text>
+        <!-- <text>description</text> -->
+       </div>
+     </div>
+
+  </div>
+
+  <!-- LOCAL PRODUCTS -->
+
+  <h1>Local Products</h1>
+
+  <div class="local-products">
+
+    <!-- item 1 -->
+    <div class="product-box">
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+       <div class="product-info">
+        <text>title</text>
+        <text>price</text>
+        <!-- <text>description</text> -->
+       </div>
+     </div>
+
+     <!-- Item 2 -->
+     <div class="product-box">
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+       <div class="product-info">
+        <text>title</text>
+        <text>price</text>
+        <!-- <text>description</text> -->
+       </div>
+     </div>
+
+     <!-- Item 3 -->
+     <div class="product-box">
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
+       <div class="product-info">
+        <text>title</text>
+        <text>price</text>
+        <!-- <text>description</text> -->
+       </div>
+     </div>
+
+  </div>
+
+  <!-- </div> -->
+
+  <!-- FOOTER -->
+  <%- include('partials/footer') %>
+
 </body>
 
 </html>
