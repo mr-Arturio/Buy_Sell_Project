@@ -6,7 +6,7 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const userQueries = require('../db/queries/users');
 const db = require('../db/connection');
 
@@ -15,15 +15,14 @@ const pool = db;
 
 //Getting all users
 router.get('/', (req, res) => {
-  res.send('Hello Worlds')
   userQueries.getUsers()
     .then(users => {
       res.json(users);
     })
     .catch(err => {
       res
-      .status(500)
-      .json({ error: err.message });
+        .status(500)
+        .json({ error: err.message });
     });
 });
 
@@ -34,16 +33,16 @@ router.get('/users/:id', (req, res) => {
     .then(user => {
       if (!user) {
         res
-        .status(404)
-        .json({ error: `User with ID ${id} not found` });
+          .status(404)
+          .json({ error: `User with ID ${id} not found` });
       } else {
         res.json(user);
       }
     })
     .catch(err => {
       res
-      .status(500)
-      .json({ error: err.message });
+        .status(500)
+        .json({ error: err.message });
     });
 });
 
@@ -56,8 +55,8 @@ router.post('/users', (req, res) => {
     })
     .catch(err => {
       res
-      .status(500)
-      .json({ error: err.message });
+        .status(500)
+        .json({ error: err.message });
     });
 });
 
@@ -80,7 +79,7 @@ router.put('/users/:id', (req, res) => {
 
 // Route for logging in a user
 router.post('/login', (req, res) => {
-   const email = req.body.email;
+  const email = req.body.email;
   const password = req.body.password;
 
 
@@ -107,7 +106,7 @@ router.post('/login', (req, res) => {
 // Route for logging out a user
 router.post('/logout', (req, res) => {
   req.session.userId = null;
-   res.send({});
+  res.redirect('/');
 });
 
 //Delete a user
