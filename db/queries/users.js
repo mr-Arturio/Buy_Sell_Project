@@ -7,4 +7,14 @@ const getUsers = () => {
     });
 };
 
-module.exports = { getUsers };
+const filterByPrice = (price) => {
+  return db.query(`SELECT $1 FROM products ORDER BY $1 desc`, [price])
+  .then ((data) => {
+    return data.rows[0]
+  })
+  .catch ((err) => {
+    return null
+  })
+}
+
+module.exports = { getUsers, filterByPrice };
