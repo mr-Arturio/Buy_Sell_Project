@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS favortites CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
+  email VARCHAR(255),
   username VARCHAR(255) NOT NULL,
   password VARCHAR(255),
   created_at TIMESTAMP,
