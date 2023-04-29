@@ -45,7 +45,32 @@ app.use('/users', usersRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
+  //notes on making a product box a clickable item & tie it to a DB
+  // add request to DB
+  //then with DB response, render Index view
+  // pass [] or {}
+  res.render('index', {items: [ { title: "example" },{ title: "example 2" } ] });
+});
+
+
+app.get('/account', (req, res) => {
+  res.render('account');
+});
+
+app.get('/favorites', (req, res) => {
+  res.render('favorites');
+});
+
+app.get('/index', (req, res) => {
   res.render('index');
+});
+
+app.get('/post-product', (req, res) => {
+  res.render('post-product');
+});
+
+app.get('/product-view', (req, res) => {
+  res.render('product-view');
 });
 
 app.listen(PORT, () => {
