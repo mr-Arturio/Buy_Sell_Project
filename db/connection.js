@@ -6,11 +6,19 @@ const dbParams = {
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  max: 20 // Maximum number of connections in the pool
 };
 
-const db = new Pool(dbParams);
+const pool = new Pool(dbParams);
 
-db.connect();
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error('Error connecting to database', err.stack);
+  } else {
+    console.log('Connected to database');
+    release(); // Release the client back to the pool
+  }
+});
 
-module.exports = db;
+module.exports = pool;
