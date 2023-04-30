@@ -1,8 +1,24 @@
-.delete-button{
-  color: red;
+
+
+.product-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.item-boxes{
+.product-image{
   display: flex;
-  justify-content: flex-start;
+  width: 600px;
+  height:auto;
+  justify-content: center;
+}
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title{
+  font-size: 30px;
 }
