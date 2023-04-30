@@ -74,7 +74,7 @@ const addUser = function (user) {
 
 module.exports = {
   getUsers,
-  getUserWithEmail,
+  // getUserWithEmail,
   getUserWithId,
   addUser,
  };
