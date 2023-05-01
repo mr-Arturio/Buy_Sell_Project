@@ -1,9 +1,9 @@
-const db = require('../connection');
+const pool = require('../connection');
 
 const getProducts = () => {
-  return db
+  return pool
     .query(
-      'SELECT *FROM products;'
+      'SELECT * FROM products;'
     )
     .then(data => {
       return data.rows;
@@ -11,7 +11,7 @@ const getProducts = () => {
 };
 
 const getProductById = (id) => {
-  return db
+  return pool
   .query(
     'SELECT * FROM products WHERE id = $1;', 
     [id]
@@ -23,7 +23,7 @@ const getProductById = (id) => {
 
 //add prodact to the database
 const createProduct = (sellerId, title, description, price, category, photo) => {
-  return db
+  return pool
   .query(
     'INSERT INTO products (seller_id, title, description, price, category, photo) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;',
      [sellerId, title, description, price, category, photo]
@@ -35,7 +35,7 @@ const createProduct = (sellerId, title, description, price, category, photo) => 
 
 //update product
 const updateProduct = (id, sellerId, title, description, price, category, photo) => {
-  return db
+  return pool
   .query(
     'UPDATE products SET seller_id = $1, title = $2, description = $3, price = $4, category = $5, photo = $6 WHERE id = $7 RETURNING *;',
      [sellerId, title, description, price, category, photo, id]
@@ -47,7 +47,7 @@ const updateProduct = (id, sellerId, title, description, price, category, photo)
 
 //delete
 const deleteProduct = (id) => {
-  return db
+  return pool
   .query(
     'DELETE FROM products WHERE id = $1;', 
     [id]
