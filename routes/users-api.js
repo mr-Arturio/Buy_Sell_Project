@@ -8,10 +8,8 @@
 const express = require('express');
 const router = express.Router();
 const userQueries = require('../db/queries/users');
-const db = require('../db/connection');
+const pool = require('../db/connection');
 
-// Define pool object using db module
-const pool = db;
 
 //Getting all users
 router.get('/', (req, res) => {
@@ -27,7 +25,7 @@ router.get('/', (req, res) => {
 });
 
 //Get a single user by id
-router.get('/users/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const id = req.params.id;
   userQueries.getUserById(id)
     .then(user => {
@@ -46,62 +44,62 @@ router.get('/users/:id', (req, res) => {
     });
 });
 
-//Create a new user
-router.post('/users', (req, res) => {
-  const { username, password, avatar } = req.body;
-  userQueries.createUser(username, password, avatar)
-    .then(user => {
-      res.status(201).json(user);
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
+// //Create a new user
+// router.post('/', (req, res) => {
+//   const { username, password, avatar } = req.body;
+//   userQueries.createUser(username, password, avatar)
+//     .then(user => {
+//       res.status(201).json(user);
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
 
-//Update an existing user
-router.put('/users/:id', (req, res) => {
-  const id = req.params.id;
-  const { username, password, avatar } = req.body;
-  userQueries.updateUser(id, username, password, avatar)
-    .then(user => {
-      if (!user) {
-        res.status(404).json({ error: `User with ID ${id} not found` });
-      } else {
-        res.json(user);
-      }
-    })
-    .catch(err => {
-      res.status(500).json({ error: err.message });
-    });
-});
+// //Update an existing user
+// router.put('/:id', (req, res) => {
+//   const id = req.params.id;
+//   const { username, password, avatar } = req.body;
+//   userQueries.updateUser(id, username, password, avatar)
+//     .then(user => {
+//       if (!user) {
+//         res.status(404).json({ error: `User with ID ${id} not found` });
+//       } else {
+//         res.json(user);
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).json({ error: err.message });
+//     });
+// });
 
-// Route for logging in a user
-router.post('/login', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+// // Route for logging in a user
+// router.post('/login', (req, res) => {
+//   const email = req.body.email;
+//   const password = req.body.password;
 
 
-  database.getUserWithEmail(pool, email).then((user) => {
-    if (!user) {
-      return res.send({ error: "no user with that id" });
-    }
+//   userQueries.getUserWithEmail(pool, email).then((user) => {
+//     if (!user) {
+//       return res.send({ error: "no user with that id" });
+//     }
 
-    if (!bcrypt.compareSync(password, user.password)) {
-      return res.send({ error: "error" });
-    }
+//     if (!bcrypt.compareSync(password, user.password)) {
+//       return res.send({ error: "error" });
+//     }
 
-    req.session.userId = user.id;
-    res.send({
-      user: {
-        name: user.name,
-        email: user.email,
-        id: user.id,
-      },
-    });
-  });
-});
+//     req.session.userId = user.id;
+//     res.send({
+//       user: {
+//         name: user.name,
+//         email: user.email,
+//         id: user.id,
+//       },
+//     });
+//   });
+// });
 
 // Route for logging out a user
 router.post('/logout', (req, res) => {
@@ -110,7 +108,7 @@ router.post('/logout', (req, res) => {
 });
 
 //Delete a user
-router.delete('/users/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = req.params.id;
   userQueries.deleteUser(id)
     .then(() => {

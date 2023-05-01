@@ -1,9 +1,10 @@
-const db = require('../connection');
+const pool = require('../connection');
 
 const getUsers = () => {
-  return db.query('SELECT * FROM users;')
+  return pool.query('SELECT * FROM users;')
     .then(data => {
       return data.rows;
+
     });
 };
 
@@ -34,11 +35,32 @@ const getUserWithEmail = function (pool, email) {
         return null;
       }
       return result.rows[0];
+
     })
     .catch((err) => {
-      console.log(err.message);
+      throw new Error(`Error getting user with email: ${err.message}`);
     });
 };
+
+// //Get a single user from the database given their email.
+// const getUserWithEmail = function (pool, email) {
+//   return pool
+//     .query(
+//       `SELECT *
+//        FROM users
+//        WHERE email = $1`,
+//       [email]
+//     )
+//     .then((result) => {
+//       if (result.rows.length === 0) {
+//         return null;
+//       }
+//       return result.rows[0];
+//     })
+//     .catch((err) => {
+//       throw new Error(`Error getting user with email: ${err.message}`);
+//     });
+// };
 
 //Get a single user from the database given their id.
 const getUserWithId = function (usersId) {
@@ -56,7 +78,7 @@ const getUserWithId = function (usersId) {
       return result.rows[0];
     })
     .catch((err) => {
-      console.log(err.message);
+      throw new Error(`Error getting user with email: ${err.message}`);
     });
 };
 
@@ -77,14 +99,14 @@ const addUser = function (user) {
       return result.rows[0];
     })
     .catch((err) => {
-      console.log(err.message);
+      throw new Error(`Error getting user with email: ${err.message}`);
     });
 };
 
 
 module.exports = {
   getUsers,
-  getUserWithEmail,
+  // getUserWithEmail,
   getUserWithId,
   addUser,
   filterByPrice
