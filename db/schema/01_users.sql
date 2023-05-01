@@ -28,8 +28,8 @@ CREATE TABLE products (
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL,
-  products_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
-  users_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 
