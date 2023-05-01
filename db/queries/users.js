@@ -34,7 +34,7 @@ const getUserWithEmail = function (pool, email) {
 };
 
 //Get a single user from the database given their id.
-const getUserWithId = function (usersId) {
+const getUserById = function (usersId) {
   return pool
     .query(
       `SELECT *
@@ -96,7 +96,7 @@ const deleteUser = (id) => {
 module.exports = {
   getUsers,
   getUserWithEmail,
-  getUserWithId,
+  getUserById,
   addUser,
   deleteUser
  };
