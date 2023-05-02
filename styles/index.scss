@@ -1,0 +1,17 @@
+// ---------FEATURED LIST----------
+.featured-list{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  height: 40vh;
+}
+
+//---------LOCAL ITEMS-------------
+
+.local-products{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
