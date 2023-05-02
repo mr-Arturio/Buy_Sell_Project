@@ -7,8 +7,8 @@ const getUsers = () => {
   )
     .then(data => {
       return data.rows;
-<<<<<<< Temporary merge branch 1
-=======
+
+
     });
 };
 
@@ -26,7 +26,7 @@ const getUserWithEmail = function (pool, email) {
         return null;
       }
       return result.rows[0];
->>>>>>> Temporary merge branch 2
+
     })
     .catch((err) => {
       throw new Error(`Error getting user with email: ${err.message}`);
