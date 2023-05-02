@@ -9,7 +9,8 @@ const express = require('express');
 const router = express.Router();
 const productQueries = require('../db/queries/products');
 
-router.get('/products', (req, res) => {
+//get all products
+router.get('/', (req, res) => {
   productQueries.getProducts()
     .then(products => {
       res.json(products);
@@ -19,7 +20,7 @@ router.get('/products', (req, res) => {
     });
 });
 
-router.get('/products/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const id = req.params.id;
   productQueries.getProductById(id)
     .then(product => {
@@ -34,7 +35,7 @@ router.get('/products/:id', (req, res) => {
     });
 });
 
-router.post('/products', (req, res) => {
+router.post('/', (req, res) => {
   const { seller_id, title, description, price, category, photo } = req.body;
   productQueries.createProduct(seller_id, title, description, price, category, photo)
     .then(product => {
@@ -45,7 +46,7 @@ router.post('/products', (req, res) => {
     });
 });
 
-router.put('/products/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   const id = req.params.id;
   const { seller_id, title, description, price, category, photo, active } = req.body;
   productQueries.updateProduct(id, seller_id, title, description, price, category, photo, active)
@@ -61,7 +62,7 @@ router.put('/products/:id', (req, res) => {
     });
 });
 
-router.delete('/products/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = req.params.id;
   productQueries.deleteProduct(id)
     .then(() => {
