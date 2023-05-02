@@ -1,8 +1,37 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.favorite-items{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 .item-boxes{
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 
+}
+
+.product-image{
+  width: 300px;
+  height: auto;
+}
+
+.product-box{
+  display: flex;
+border-style: solid;
+margin: 40px;
+width: 310px;
+flex-direction: column;
+}
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
 }
