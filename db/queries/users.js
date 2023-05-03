@@ -2,11 +2,15 @@ const pool = require('../connection');
 
 const getUsers = () => {
   return pool
-  .query(
-    'SELECT * FROM users;'
-  )
+    .query(
+      'SELECT * FROM users;'
+    )
     .then(data => {
       return data.rows;
+
+    })
+    .catch((err) => {
+      throw new Error(`Error getting user with email: ${err.message}`);
 
     });
 };
@@ -69,7 +73,25 @@ const addUser = function (user) {
       return result.rows[0];
     })
     .catch((err) => {
-      throw new Error(`Error getting user with email: ${err.message}`);
+      throw new Error(`Error adding user: ${err.message}`);
+    });
+};
+
+//delete
+const deleteUser = (id) => {
+  return pool
+    .query(
+      'DELETE FROM users WHERE id = $1;',
+      [id]
+    )
+    .then((result) => {
+      if (result.rowCount === 0) {
+        return null;
+      }
+      return result.rowCount;
+    })
+    .catch((err) => {
+      throw new Error(`Error deleting user: ${err.message}`);
     });
 };
 
@@ -80,5 +102,5 @@ module.exports = {
   getUserById,
   addUser,
   deleteUser
- };
+};
 
