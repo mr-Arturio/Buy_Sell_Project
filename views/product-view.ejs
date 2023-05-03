@@ -22,42 +22,38 @@
 </head>
 <!-- supplied code -->
 
-<body class="product-view-body">
+<body>
 
   <%- include('partials/header') %>
 
+  <div class="product-box">
 
-  <h1>product view</h1>
+    <div>
+      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="item-image">
+    <div>
 
+    <div class="product-info">
+      <text class="title">Console</text>
+      <text>$750</text>
+      <text>2020 Xbox, modified to run on diesel.</text>
+    </div>
 
-    <div class="product-box">
+    <div class="buttons">
 
-      <div class="product-image">
-        <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="item-image">
-      <div>
+      <form class="contact-seller-button" method="POST" action="">
+        <button type="submit">Contact Seller</button>
+      </form>
 
-      <div class="product-info">
-        <text class="title">Console</text>
-        <text>$750</text>
-        <text>2020 Xbox, modified to run on diesel.</text>
-      </div>
-
-      <div class="buttons">
-
-        <form method="POST" action="">
-          <button type="submit">Contact Seller</button>
-        </form>
-
-        <form method="POST" action="">
-          <button type="submit">Favorite</button>
-        </form>
-
-      </div>
-
+      <form class="favorite-button" method="POST" action="">
+        <button type="submit">Favorite</button>
+      </form>
 
     </div>
 
-  <!-- FOOTER -->
+
+  </div>
+
+
   <%- include('partials/footer') %>
 
 </body>
