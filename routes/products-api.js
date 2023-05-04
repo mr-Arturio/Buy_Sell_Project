@@ -27,7 +27,8 @@ router.get('/:id', (req, res) => {
       if (!product) {
         res.status(404).json({ error: `Product with ID ${id} not found` });
       } else {
-        res.json(product);
+        // res.json(product);
+        res.render("product-view", {product});
       }
     })
     .catch(err => {
