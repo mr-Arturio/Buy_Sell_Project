@@ -36,8 +36,6 @@ const usersRoutes = require('./routes/users');
 const searchRoutes = require('./routes/search-routes');
 const { DatabaseError } = require('pg');
 const pool = require('./db/connection');
-
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
