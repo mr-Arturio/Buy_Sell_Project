@@ -22,6 +22,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/searchDatabase.js"></script>
   <!-- <script type="text/javascript" src="/public/scripts/carousel_script.js"></script> -->
 </head>
 <!-- supplied code -->
@@ -30,10 +31,10 @@
 
   <!-- header link -->
   <%- include('partials/header') %>
-
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for items..">
-
-
+    <form action="/search" method="get" id="submit-form"></form>
+    <input type="text" id="myInput" placeholder="Search for items..">
+    <button type="button" onclick="searchDatabase()">Search</button>
+    </form>
     <!-- main content -->
     <h1>Featured list</h1>
 
