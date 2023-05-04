@@ -44,9 +44,10 @@
 
   <!-- SEARCH BAR -->
   <div class="search-area">
-    <input class="search-bar" type="text" id="search" onkeyup="myFunction()" placeholder="Search for items...">
-
-    <input type="submit" value="Submit">
+    <form action="/search" method="get" id="submit-form">
+      <input class="search-bar" type="text" id="search" name="name" placeholder="Search for items...">
+      <button type="submit">Search</button>
+    </form>
   </div>
 
 
