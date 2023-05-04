@@ -5,12 +5,13 @@ body{
 }
 
 // ---------FEATURED LIST----------
-.featured-list{
+.carousel{
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: center;
   height: 40vh;
+  margin-top: 10px;
 }
 
 //---------LOCAL ITEMS-------------

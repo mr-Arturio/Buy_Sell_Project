@@ -2,9 +2,9 @@ const pool = require('../connection');
 
 const getUsers = () => {
   return pool
-  .query(
-    'SELECT * FROM users;'
-  )
+    .query(
+      'SELECT * FROM users;'
+    )
     .then(data => {
       return data.rows;
     })
@@ -78,7 +78,7 @@ const addUser = function (user) {
 const deleteUser = (id) => {
   return pool
     .query(
-      'DELETE FROM users WHERE id = $1;', 
+      'DELETE FROM users WHERE id = $1;',
       [id]
     )
     .then((result) => {
@@ -99,4 +99,5 @@ module.exports = {
   getUserById,
   addUser,
   deleteUser
- };
+};
+
