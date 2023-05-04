@@ -1,24 +1,38 @@
-
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .product-box{
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .product-image{
   display: flex;
-  width: 600px;
-  height:auto;
-  justify-content: center;
+  max-width: 700px;
+  max-height: 700px;
+  margin: 15px;
 }
 
 .product-info{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 15px;
 }
 
 .title{
   font-size: 30px;
+}
+
+.contact-seller-button{
+  margin: 15px;
+}
+
+.favorite-button{
+  margin: 15px;
 }
