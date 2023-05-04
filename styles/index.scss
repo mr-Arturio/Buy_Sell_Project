@@ -1,3 +1,9 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 // ---------FEATURED LIST----------
 .carousel{
   display: flex;
@@ -23,3 +29,4 @@
   padding: 10px;
   height: 33vh;
 }
+
