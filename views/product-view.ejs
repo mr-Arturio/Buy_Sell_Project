@@ -24,18 +24,19 @@
 
 <body>
 
+
   <%- include('partials/header') %>
 
   <div class="product-box">
 
     <div>
-      <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="item-image">
+      <img class="product-image" src= "<%= product.photo %>" alt="item-image">
     <div>
 
     <div class="product-info">
-      <text class="title">Console</text>
-      <text>$750</text>
-      <text>2020 Xbox, modified to run on diesel.</text>
+      <text class="title"> <%= product.title %> </text>
+      <text> <%= product.price %> </text>
+      <text> <%= product.description %> </text>
     </div>
 
     <div class="buttons">
@@ -55,6 +56,7 @@
 
 
   <%- include('partials/footer') %>
+
 
 </body>
 
