@@ -4,15 +4,22 @@
   width: 100%;
   flex-direction: row;
   justify-content: center;
-  height: 40vh;
+  height: 45vh;
   margin-top: 10px;
 }
 
 //---------LOCAL ITEMS-------------
 
-.local-products{
+.products{
   display: flex;
   width: 100%;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-box {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 33vh;
 }
