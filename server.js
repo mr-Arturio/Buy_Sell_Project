@@ -34,7 +34,6 @@ const productApiRoutes = require('./routes/products-api');
 const favoritesRoutes = require('./routes/favorites-api');
 const usersRoutes = require('./routes/users');
 const searchRoutes = require('./routes/search-routes');
-
 const { DatabaseError } = require('pg');
 const pool = require('./db/connection');
 // Mount all resource routes
