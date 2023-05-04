@@ -40,7 +40,8 @@ const pool = require('./db/connection');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/products', productApiRoutes);
+// app.use('/api/products', productApiRoutes);
+app.use('/products', productApiRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/users', usersRoutes);
 app.use('/search', searchRoutes)
@@ -88,4 +89,17 @@ app.get('/index', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`PlayNation is alive on port ${PORT}`);
+});
+
+// PRODUCT VIEW
+app.get('/product-view', (req, res) => {
+  pool.query('SELECT * FROM products')
+    .then((result) => {
+      const products = result.rows;
+      res.render('product-view', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
 });
