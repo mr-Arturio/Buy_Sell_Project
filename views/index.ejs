@@ -31,9 +31,9 @@
 
   <!-- header link -->
   <%- include('partials/header') %>
-    <form action="/search" method="get" id="submit-form"></form>
-    <input type="text" id="myInput" placeholder="Search for items..">
-    <button type="button" onclick="searchDatabase()">Search</button>
+    <form action="/search" method="get" id="submit-form">
+    <input type="text" id="myInput" placeholder="Search for items.." name="name">
+    <button type="submit">Search</button>
     </form>
     <!-- main content -->
     <h1>Featured list</h1>
