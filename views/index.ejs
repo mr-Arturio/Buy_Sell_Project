@@ -31,12 +31,7 @@
   <!-- header link -->
   <%- include('partials/header') %>
 
-    </form>
     <!-- main content -->
-
-
-    <!-- featured list -->
-    <div class="featured-list">
 
     <!-- carousel with categories -->
     <div class="carousel">
@@ -44,23 +39,28 @@
     </div>
 
 
-
-
     <!-- PRODUCTS -->
 
     <h1>Products</h1>
 
-    <div class="local-products">
-      <% for (let i = 0; i < 4; i++) { %>
+    <div class="products">
+      <% for (let i=0; i < 6; i++) { %>
         <!-- item <%= i+1 %> -->
-        <div class="product-box">
+        <a class="product-box" href="http://localhost:8080/products/<%= products[i].id %>">
+        
           <img class="product-image" src="<%= products[i].photo %>" alt="<%= products[i].title %>">
           <div class="product-info">
-            <text><%= products[i].title %></text>
-            <text><%= products[i].price %></text>
+            <text><strong>Title:</strong>
+              <%= products[i].title %>
+            </text>
+            <br>
+            <text><strong>Price:</strong>
+              <%= products[i].price %> CAD
+            </text>
           </div>
-        </div>
-      <% } %>
+       
+      </a>
+        <% } %>
     </div>
 
     <!-- </div> -->
