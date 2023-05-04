@@ -33,6 +33,8 @@ const userApiRoutes = require('./routes/users-api');
 const productApiRoutes = require('./routes/products-api');
 const favoritesRoutes = require('./routes/favorites-api');
 const usersRoutes = require('./routes/users');
+const { DatabaseError } = require('pg');
+const pool = require('./db/connection');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,7 +54,7 @@ app.get('/', (req, res) => {
   // add request to DB
   //then with DB response, render Index view
   // pass [] or {}
-  res.render('index', {items: [ { title: "example" },{ title: "example 2" } ] });
+  res.render('index', { items: [{ title: "example" }, { title: "example 2" }] });
 });
 
 
@@ -64,17 +66,24 @@ app.get('/favorites', (req, res) => {
   res.render('favorites');
 });
 
-app.get('/index', (req, res) => {
-  res.render('index');
-});
 
 app.get('/post-product', (req, res) => {
   res.render('post-product');
 });
 
-app.get('/product-view', (req, res) => {
-  res.render('product-view');
+app.get('/index', (req, res) => {
+  pool.query('SELECT * FROM products')
+    .then((result) => {
+      const products = result.rows;
+      res.render('index', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`PlayNation is alive on port ${PORT}`);
