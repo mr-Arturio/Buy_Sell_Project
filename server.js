@@ -33,8 +33,10 @@ const userApiRoutes = require('./routes/users-api');
 const productApiRoutes = require('./routes/products-api');
 const favoritesRoutes = require('./routes/favorites-api');
 const usersRoutes = require('./routes/users');
+const searchRoutes = require('./routes/search-routes');
 const { DatabaseError } = require('pg');
 const pool = require('./db/connection');
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -43,6 +45,7 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/products', productApiRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/users', usersRoutes);
+app.use('/search', searchRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
