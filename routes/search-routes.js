@@ -3,10 +3,12 @@ const router = express.Router();
 const searchQuery = require ('../db/queries/search');
 
 router.get('/', (req, res) => {
-  const query = req.query.name 
+  const query = req.query.name
   searchQuery.searchDatabse(query)
   .then (results => {
-    res.json(results)
+    console.log("RESULTS--->", results)
+    res.render('search', {results} )
+
   })
   .catch(error => {
     console.error(error);
