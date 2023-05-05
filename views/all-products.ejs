@@ -33,18 +33,8 @@
 
     <!-- main content -->
 
-    <!-- carousel with categories -->
-    <div class="carousel">
-      <%- include('partials/carousel_index') %>
-    </div>
-
-
-    <!-- PRODUCTS -->
-
-    <h1>Products</h1>
-
     <div class="products">
-      <% for (let i=0; i < 6; i++) { %>
+      <% for (let i=0; i < 12; i++) { %>
         <!-- item <%= i+1 %> -->
         <a class="product-box" href="http://localhost:8080/products/<%= products[i].id %>">
 
