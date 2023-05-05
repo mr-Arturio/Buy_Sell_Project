@@ -33,29 +33,19 @@
 
     <!-- main content -->
 
-    <!-- carousel with categories -->
-    <div class="carousel">
-      <%- include('partials/carousel_index') %>
-    </div>
-
-
-    <!-- PRODUCTS -->
-
-    <h1>Products</h1>
-
     <div class="products">
-      <% for (let i=0; i < 6; i++) { %>
-        <!-- item <%= i+1 %> -->
-        <a class="product-box" href="http://localhost:8080/products/<%= products[i].id %>">
+      <% for (const product of products) { %>
 
-          <img class="product-image" src="<%= products[i].photo %>" alt="<%= products[i].title %>">
+        <a class="product-box" href="http://localhost:8080/products/<%= product.id %>">
+
+          <img class="product-image" src="<%= product.photo %>" alt="<%= product.title %>">
           <div class="product-info">
             <text><strong>Title:</strong>
-              <%= products[i].title %>
+              <%= product.title %>
             </text>
             <br>
             <text><strong>Price:</strong>
-              <%= products[i].price %> CAD
+              <%= products.price %> CAD
             </text>
           </div>
 
