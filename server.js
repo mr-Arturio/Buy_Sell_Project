@@ -51,13 +51,13 @@ app.use('/search', searchRoutes)
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
-  //notes on making a product box a clickable item & tie it to a DB
-  // add request to DB
-  //then with DB response, render Index view
-  // pass [] or {}
-  res.render('index', { items: [{ title: "example" }, { title: "example 2" }] });
-});
+// app.get('/', (req, res) => {
+//   //notes on making a product box a clickable item & tie it to a DB
+//   // add request to DB
+//   //then with DB response, render Index view
+//   // pass [] or {}
+//   res.render('index', { items: [{ title: "example" }, { title: "example 2" }] });
+// });
 
 
 app.get('/account', (req, res) => {
