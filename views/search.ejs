@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Search Results</title>
   <meta charset="UTF-8">
@@ -19,25 +19,36 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 </head>
+
+
 <body class="product-view-body">
 
   <%- include('partials/header') %>
 
-  <h1> Search Results</h1>
-
-  <% for (let i = 0;i < products.length; i++) { %>
-<li>
-  <div class="product-box">
-<div class="product-image">
-  <img src="<%= product.photo %>" alt="item-image">
-
-</div>
-
-  </div>
-</li>
-  <% } %>
+    <h1> Search Results</h1>
+    <!-- products for the search bar showing -->
+    <% for (const product of results ) { %>
+      <div class="product-box">
+        <img class="product-image" src="<%= product.photo %>" alt="<%=product.title %>">
+        <div class="product-info">
+          <h2>
+            <%= product.title %>
+          </h2>
+          <p>
+            <%= product.description %>
+          </p>
+          <p>
+            <%= product.price %>
+          </p>
+          <p>
+            <%= product.category %>
+          </p>
+        </div>
+      </div>
+      <% } %>
 
 
 
 </body>
+
 </html>

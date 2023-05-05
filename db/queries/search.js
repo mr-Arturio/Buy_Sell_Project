@@ -4,12 +4,11 @@ const searchDatabse = (search) => {
   return pool
   .query(
     `SELECT * FROM products
-    WHERE title LIKE $1
-    OR description LIKE $1
-    OR category LIKE $1 ;`,['%' +search+ '%']
+    WHERE title ILIKE $1
+    OR description ILIKE $1
+    OR category ILIKE $1 ;`,['%' +search+ '%']
   )
   .then(data => {
-  console.log('data', data.rows);
     return data.rows;
   })
   .catch ((err) => {
