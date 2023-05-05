@@ -1,5 +1,8 @@
 const pool = require('../connection');
 
+//Get all favorites
+
+
 // Get all favorites for a given user
 const getFavorites = (userId) => {
   return pool

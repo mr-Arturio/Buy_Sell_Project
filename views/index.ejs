@@ -46,27 +46,28 @@
     <div class="products">
       <% for (let i=0; i < 6; i++) { %>
         <!-- item <%= i+1 %> -->
-        <a class="product-box" href="http://localhost:8080/products/<%= products[i].id %>">
-        
-          <img class="product-image" src="<%= products[i].photo %>" alt="<%= products[i].title %>">
-          <div class="product-info">
-            <text><strong>Title:</strong>
-              <%= products[i].title %>
-            </text>
-            <br>
-            <text><strong>Price:</strong>
-              <%= products[i].price %> CAD
-            </text>
-          </div>
-       
-      </a>
-        <% } %>
+        <div class="product-box">
+          <a href="http://localhost:8080/products/<%= products[i].id %>">
+            <img class="product-image" src="<%= products[i].photo %>" alt="<%= products[i].title %>">
+            <div class="product-info">
+              <text><strong>Title:</strong>
+                <%= products[i].title %>
+              </text>
+          </a>
+          <br>
+          <text><strong>Price:</strong>
+            <%= products[i].price %> CAD
+          </text>
+        </div>
+
     </div>
+    <% } %>
+      </div>
 
-    <!-- </div> -->
+      <!-- </div> -->
 
-    <!-- FOOTER -->
-    <%- include('partials/footer') %>
+      <!-- FOOTER -->
+      <%- include('partials/footer') %>
 
 </body>
 
