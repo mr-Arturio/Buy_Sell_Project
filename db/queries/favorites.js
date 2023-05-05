@@ -1,7 +1,17 @@
 const pool = require('../connection');
 
 //Get all favorites
-
+const getAllFavorites = () => {
+  return pool
+    .query(
+      'SELECT * FROM favorites JOIN products ON products.id = product_id;'
+    )
+    .then(data => data.rows)
+    .catch(error => {
+      console.error(error);
+      throw new Error('Unable to get favorites.');
+    });
+};
 
 // Get all favorites for a given user
 const getFavorites = (userId) => {
@@ -45,6 +55,7 @@ const removeFavorite = (userId, favoriteId) => {
 };
 
 module.exports = {
+  getAllFavorites,
   getFavorites,
   addFavorite,
   removeFavorite
