@@ -91,6 +91,7 @@ app.listen(PORT, () => {
   console.log(`PlayNation is alive on port ${PORT}`);
 });
 
+//move into route file
 // PRODUCT VIEW
 app.get('/product-view', (req, res) => {
   pool.query('SELECT * FROM products')
@@ -104,7 +105,7 @@ app.get('/product-view', (req, res) => {
     });
 });
 
-
+//move into routes
 // ALL PRODUCTS
 app.get('/all-products', (req, res) => {
   pool.query('SELECT * FROM products')
