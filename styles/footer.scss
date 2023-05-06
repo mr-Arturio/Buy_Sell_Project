@@ -4,7 +4,7 @@
   display: flex;
   width: 100vw;
   height: 60px;
-  background: #e16060;
+  background: rgb(25, 25, 25);
   font-size: 20px;
   align-items: flex-end;
   flex-grow: 0;
@@ -12,3 +12,14 @@
   position:static;
   bottom: 0px;
 }
+
+.nav-link{
+  color: rgb(204, 204, 204)
+}
+
+
+//REMOVE LINK UNDERLINE
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
