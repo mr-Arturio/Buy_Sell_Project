@@ -38,7 +38,7 @@
 
     <div class="products">
       <% for (const product of products) { %>
-        
+
         <a class="product-box" href="http://localhost:8080/products/<%= product.id %>">
 
           <img class="product-image" src="<%= product.photo %>" alt="<%= product.title %>">
@@ -46,18 +46,18 @@
             <text><strong>Title:</strong>
               <%= product.title %>
             </text>
-             
+
             <br>
             <text><strong>Price:</strong>
-              <%= products.price %> CAD
+              $<%= product.price %> CAD
             </text>
           </div>
   <div class="icon">
           <i class="fa-solid fa-heart fa-2xl" style="color: #191919;"></i>
         </div>
-   
+
   </a>
-     
+
         <% } %>
     </div>
 

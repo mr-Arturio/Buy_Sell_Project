@@ -43,10 +43,10 @@
               </text>
               <br>
               <text><strong>Price:</strong>
-                <%= favorite.price %> CAD
+                $<%= favorite.price %> CAD
               </text>
             </div>
-            
+
             <div class="buttons">
               <form method="POST" action="/favorites/<%= favorite.id %>/delete">
                 <button type="submit">Remove</button>
@@ -55,7 +55,7 @@
                 <button type="submit">Contact Seller</button>
               </form>
             </div>
-          
+
           </div>
           <% } %>
       </div>

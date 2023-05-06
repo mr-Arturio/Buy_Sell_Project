@@ -2,10 +2,11 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: rgb(204,204,204);
 }
 
 .add-product{
-  border-style: solid;
+  // border-style: solid;
 }
 
 .add-product-form{

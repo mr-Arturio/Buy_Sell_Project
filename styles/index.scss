@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: rgb(204,204,204);
 }
 
 // ---------FEATURED LIST----------
@@ -24,23 +25,27 @@ body {
 }
 
 .product-box {
+  display: flex;
   position: relative;
   width: 25%;
   box-sizing: border-box;
   padding: 10px;
-  height: 33vh;
+  height: 25vh;
   display: flex;
-  border-style: solid;
+  // border-style: solid;
+  // border-color: #f94512;
+  background-color: rgb(55,55,55);
   justify-content: space-evenly;
   flex-direction: row;
   margin: 20px;
-  
+  color: rgb(204,204,204);
 }
 
 
 .product-info{
   display: flex;
   flex-direction: column;
+  color: rgb(204,204,204);
 }
 
 a {
