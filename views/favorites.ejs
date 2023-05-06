@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
   <link rel="stylesheet" href="/styles/product-view.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/favorites.css" type="text/css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -45,11 +46,18 @@
                 <%= favorite.price %> CAD
               </text>
             </div>
-            <form method="POST" action="/favorites/<%= favorite.id %>/delete">
-              <button type="submit">Remove</button>
-            </form>
+            
+            <div class="buttons">
+              <form method="POST" action="/favorites/<%= favorite.id %>/delete">
+                <button type="submit">Remove</button>
+              </form>
+              <form method="POST" action="/favorites/<%= favorite.id %>/contact-seller">
+                <button type="submit">Contact Seller</button>
+              </form>
+            </div>
+          
           </div>
-        <% } %>
+          <% } %>
       </div>
     </div>
 
