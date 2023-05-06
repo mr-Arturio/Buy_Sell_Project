@@ -2,11 +2,11 @@ const express = require("express");
 const sellProduct = require ('../public/scripts/sell_products.js');
 const router = express.Router()
 
-router.post("/index", (req, res) => {
+router.post("/", (req, res) => {
   sellProduct
     .addProducts(req.body)
     .then((products) => {
-      res.redirect('/index')
+      res.redirect('/')
     })
     .catch((error) => {
       console.error(error);
