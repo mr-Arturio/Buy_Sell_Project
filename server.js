@@ -85,6 +85,18 @@ app.get('/index', (req, res) => {
     });
 });
 
+app.get('/favorites', (req, res) => {
+  pool.query('SELECT * FROM products')
+    .then((result) => {
+      const products = result.rows;
+      res.render('favorites', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
+
 
 
 app.listen(PORT, () => {

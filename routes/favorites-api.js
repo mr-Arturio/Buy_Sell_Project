@@ -2,6 +2,15 @@ const express = require('express');
 const router = express.Router();
 const favoritesQueries = require('../db/queries/favorites');
 
+// Get all favorites
+router.get('/', (req, res, next) => {
+  favoritesQueries.getAllFavorites()
+    .then(favorites => {
+      res.render('favorites', { favorites });
+    })
+    .catch(error => next(error));
+});
+
 // Get all favorites for a given user
 router.get('/:userId', (req, res, next) => {
   const userId = req.params.userId;

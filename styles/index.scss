@@ -1,11 +1,11 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 // ---------FEATURED LIST----------
-.carousel{
+.carousel {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -16,7 +16,7 @@ body{
 
 //---------LOCAL ITEMS-------------
 
-.products{
+.products {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -24,15 +24,45 @@ body{
 }
 
 .product-box {
+  position: relative;
   width: 25%;
   box-sizing: border-box;
   padding: 10px;
   height: 33vh;
+  display: flex;
+  border-style: solid;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 20px;
+  
+}
+
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+}
+
+a {
   cursor: pointer;
 }
 
-.product-image{
+.product-image {
   max-width: 20vh;
   max-height: 20vh;
   // border-style: solid;
 }
+
+
+.icon {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* add transition property */
+}
+
+.icon:hover {
+  transform: scale(1.2); /* increase size when hovering */
+}
+

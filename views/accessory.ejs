@@ -18,7 +18,10 @@
   <!-- <link rel="stylesheet" type="text/css" href="/styles/carousel_styles.css"> -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+  <!--Font Awesome library -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <script src="scripts/icon.js"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
   <script defer src="/scripts/searchDatabase.js"></script>
@@ -35,7 +38,7 @@
 
     <div class="products">
       <% for (const product of products) { %>
-
+        
         <a class="product-box" href="http://localhost:8080/products/<%= product.id %>">
 
           <img class="product-image" src="<%= product.photo %>" alt="<%= product.title %>">
@@ -43,13 +46,18 @@
             <text><strong>Title:</strong>
               <%= product.title %>
             </text>
+             
             <br>
             <text><strong>Price:</strong>
               <%= products.price %> CAD
             </text>
           </div>
-
-      </a>
+  <div class="icon">
+          <i class="fa-solid fa-heart fa-2xl" style="color: #191919;"></i>
+        </div>
+   
+  </a>
+     
         <% } %>
     </div>
 
