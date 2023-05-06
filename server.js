@@ -103,6 +103,7 @@ app.listen(PORT, () => {
   console.log(`PlayNation is alive on port ${PORT}`);
 });
 
+//move into route file
 // PRODUCT VIEW
 app.get('/product-view', (req, res) => {
   pool.query('SELECT * FROM products')
@@ -116,3 +117,57 @@ app.get('/product-view', (req, res) => {
     });
 });
 
+//move into routes
+// -----FILTER HEADER BUTTONS------
+
+// ALL PRODUCTS
+app.get('/all-products', (req, res) => {
+  pool.query('SELECT * FROM products')
+    .then((result) => {
+      const products = result.rows;
+      res.render('all-products', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
+
+// CONSOLES
+app.get('/console', (req, res) => {
+  pool.query("SELECT * FROM products WHERE category = 'Console'")
+    .then((result) => {
+      const products = result.rows;
+      res.render('console', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
+
+// GAMES
+app.get('/game', (req, res) => {
+  pool.query("SELECT * FROM products WHERE category = 'Games'")
+    .then((result) => {
+      const products = result.rows;
+      res.render('game', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
+
+// ACCESSORIES
+app.get('/accessory', (req, res) => {
+  pool.query("SELECT * FROM products WHERE category = 'Accessories'")
+    .then((result) => {
+      const products = result.rows;
+      res.render('accessory', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
