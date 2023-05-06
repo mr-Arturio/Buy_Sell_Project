@@ -1,0 +1,66 @@
+// ---------HEADER----------------
+
+.header {
+  display: flex;
+  // justify-content: space-between;
+  flex-direction: column;
+  // align-items: center;
+  width: 100%;
+  background: #e16060;
+  flex-grow: 0;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// LEFT SIDE
+.left-side{
+  min-width: 400px;
+}
+
+.top-left{
+  margin: 15px;
+  font-size: 45px;
+}
+
+.bottom-left{
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+// RIGHT SIDE
+.right-side{
+  min-width: 275px;
+}
+
+.top-right{
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+
+}
+
+.bottom-right{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-top: 50px;
+}
+
+.search-area{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 15px;
+}
+
+.search-bar{
+  width: 70vw;
+  background-color: rgb(234, 234, 234);
+}

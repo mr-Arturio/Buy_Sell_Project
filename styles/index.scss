@@ -1,0 +1,38 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// ---------FEATURED LIST----------
+.carousel{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  height: 45vh;
+  margin-top: 10px;
+}
+
+//---------LOCAL ITEMS-------------
+
+.products{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-box {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 33vh;
+  cursor: pointer;
+}
+
+.product-image{
+  max-width: 20vh;
+  max-height: 20vh;
+  // border-style: solid;
+}
