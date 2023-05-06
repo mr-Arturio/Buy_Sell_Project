@@ -4,8 +4,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: rgb(25, 25, 25);
+  // background: #191919;
+  background: linear-gradient(233deg, rgba(0,0,0,1) 0%, rgba(11,11,119,1) 50%, rgba(249,69,18,1) 100%);
   flex-grow: 0;
+  color: rgb(234, 234, 234);
 }
 
 .top {
@@ -71,6 +73,7 @@
 .title{
   color: rgb(204, 204, 204)
 }
+
 
 //REMOVE LINK UNDERLINE
 a:link { text-decoration: none; }

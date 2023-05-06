@@ -4,7 +4,9 @@
   display: flex;
   width: 100vw;
   height: 60px;
-  background: rgb(25, 25, 25);
+
+ background: linear-gradient(102deg, rgba(0,0,0,1) 0%, rgba(5,5,52,1) 50%, rgba(102,23,0,1) 100%);
+
   font-size: 20px;
   align-items: flex-end;
   flex-grow: 0;
