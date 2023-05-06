@@ -18,10 +18,12 @@
   <!-- <link rel="stylesheet" type="text/css" href="/styles/carousel_styles.css"> -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+   <!--Font Awesome library -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+   
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-  <script defer src="/scripts/searchDatabase.js"></script>
+  
   <!-- <script type="text/javascript" src="/public/scripts/carousel_script.js"></script> -->
 </head>
 <!-- supplied code -->
@@ -59,7 +61,9 @@
             <%= products[i].price %> CAD
           </text>
         </div>
-
+        <div class="icon">
+          <i class="fa-solid fa-heart fa-2xl" style="color: #191919;"></i>
+        </div>
     </div>
     <% } %>
       </div>
@@ -68,7 +72,7 @@
 
       <!-- FOOTER -->
       <%- include('partials/footer') %>
-
-</body>
+      <script src="scripts/icon.js"></script>
+     </body>
 
 </html>
