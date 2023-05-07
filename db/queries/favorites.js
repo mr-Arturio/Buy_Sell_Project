@@ -41,12 +41,12 @@ const addFavorite = (productId, userId) => {
     });
 };
 
-// Remove a favorite for a given user
-const removeFavorite = (userId, favoriteId) => {
+// Remove a favorite from db
+const removeFavorite = (favoriteId) => {
   return pool
     .query(
-      'DELETE FROM favorites WHERE user_id = $1 AND id = $2',
-      [userId, favoriteId]
+      'DELETE FROM favorites WHERE id=$1',
+      [favoriteId]
     )
     .catch(error => {
       console.error(error);
