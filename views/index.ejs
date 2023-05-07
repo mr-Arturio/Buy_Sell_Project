@@ -18,12 +18,15 @@
   <!-- <link rel="stylesheet" type="text/css" href="/styles/carousel_styles.css"> -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
-   <!--Font Awesome library -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Font Awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   <!-- icon script -->
-   <script src="scripts/icon.js"></script>
+  <!-- icon script -->
+  <script src="/scripts/addToFavorites_icon.js"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
+
 
   <!-- <script type="text/javascript" src="/public/scripts/carousel_script.js"></script> -->
 </head>
@@ -63,7 +66,8 @@
           </text>
         </div>
         <div class="icon">
-          <i class="fa-solid fa-heart fa-2xl" style="color: #191919;"></i>
+          <i id="add-to-favorites" class="fa-solid fa-heart fa-2xl" style="color: #191919;"
+            data-product-id="<%= products[i].id %>"></i>
         </div>
     </div>
     <% } %>
@@ -74,6 +78,6 @@
       <!-- FOOTER -->
       <%- include('partials/footer') %>
 
-     </body>
+</body>
 
 </html>
