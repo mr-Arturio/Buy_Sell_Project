@@ -33,16 +33,18 @@ router.post('/', (req, res, next) => {
     .catch(error => next(error));
 });
 
-// Remove a favorite for a given user
-router.delete('/:userId/:favoriteId', (req, res, next) => {
-  const userId = req.params.userId;
+// Remove a favorite
+router.delete('/', (req, res, next) => {
   const favoriteId = req.params.favoriteId;
 
-  favoritesQueries.removeFavorite(userId, favoriteId)
+  favoritesQueries.removeFavorite(favoriteId)
     .then(() => {
       res.sendStatus(204);
+
     })
     .catch(error => next(error));
 });
+
+
 
 module.exports = router;
