@@ -11,6 +11,16 @@ The following steps are only for _one_ of the group members to perform.
 4. Add your team members as collaborators to the project so that they can push to this repo
 5. Let your team members know the repo URL so that they use the same repo (they should _not_ create a copy/fork of this repo since that will add additional workflow complexity to the project)
 
+#### PLAYNATION 
+
+This PlayNation app is an app similar to a buy and sell listing that resembles kijiji or ebay. has functionalities that include search, post product, carousel to display products to list a few. 
+
+## FINAL PRODUCT 
+
+![ALL PRODUCTS](https://user-images.githubusercontent.com/17488154/236655515-109eaf61-1167-44fa-847b-9ce06f826d65.png)
+![HOME PAGE](https://user-images.githubusercontent.com/17488154/236655537-6d6cc7a1-bc68-44f1-adfd-26fe215af150.png)
+![ADD/SELL PRODUCT](https://user-images.githubusercontent.com/17488154/236655542-2857b10d-95c5-4464-82fd-a6b2ad257399.png)
+![ERD TABLE](https://user-images.githubusercontent.com/17488154/236655550-6fc8ab33-1dfc-475b-ae49-bf05dd859ae7.png)
 
 ## Getting Started
 
@@ -42,3 +52,8 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+- bcrypt
+- cookie-session
+- express
+- nodemon
+- pg
