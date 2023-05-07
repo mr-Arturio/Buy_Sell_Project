@@ -2,12 +2,13 @@
 <html lang="en">
 
 <!-- supplied code -->
-<head>
-  <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<head>
+  <title>Favorites</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/product-view.css" type="text/css" />
   <link rel="stylesheet" href="/styles/favorites.css" type="text/css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -26,61 +28,42 @@
 
   <%- include('partials/header') %>
 
-  <div class="favorite-items">
+    <div class="favorite-items">
 
-    <h1>Your favorites</h1>
+      <h1>Your favorites</h1>
 
-    <div class="item-boxes">
+      <div class="item-boxes">
+        <% for (const favorite of favorites ) { %>
+          <!-- item  -->
+          <div class="item-box">
+            <img class="product-image" src="<%= favorite.photo %>" alt="<%= favorite.title %>">
+            <div class="product-info">
+              <text><strong>Title:</strong>
+                <%= favorite.title %>
+              </text>
+              <br>
+              <text><strong>Price:</strong>
+                $<%= favorite.price %> CAD
+              </text>
+            </div>
 
-      <!-- item 1 -->
-      <div class="product-box">
-        <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
-         <div class="product-info">
-          <text>title</text>
-          <text>price</text>
+            <div class="buttons">
+              <form method="POST" action="/favorites/<%= favorite.id %>/delete">
+                <button type="submit">Remove</button>
+              </form>
+              <form method="POST" action="/favorites/<%= favorite.id %>/contact-seller">
+                <button type="submit">Contact Seller</button>
+              </form>
+            </div>
 
-          <form method="POST" action="">
-            <button type="submit">Remove</button>
-          </form>
-
-          <!-- <text>description</text> -->
-         </div>
-       </div>
-
-       <!-- item 1 -->
-       <div class="product-box">
-         <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
-          <div class="product-info">
-           <text>title</text>
-           <text>price</text>
-
-           <form method="POST" action="">
-            <button type="submit">Remove</button>
-           </form>
-
-           <!-- <text>description</text> -->
           </div>
-        </div>
-
-        <!-- item 1 -->
-        <div class="product-box">
-          <img class="product-image" src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1019&q=80" alt="xbox console">
-           <div class="product-info">
-            <text>title</text>
-            <text>price</text>
-
-             <form method="POST" action="">
-              <button type="submit">Remove</button>
-             </form>
-
-            <!-- <text>description</text> -->
-           </div>
-         </div>
+          <% } %>
+      </div>
     </div>
-  </div>
 
-  <!-- FOOTER -->
-<%- include('partials/footer') %>
+
+    <!-- FOOTER -->
+    <%- include('partials/footer') %>
 
 </body>
 

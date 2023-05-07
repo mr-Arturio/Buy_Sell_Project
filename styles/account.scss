@@ -1,8 +1,17 @@
-.delete-button{
-  color: red;
+body{
+  display: flex;
+  color: rgb(204,204,204);
+
 }
 
-.item-boxes{
+.account-name{
   display: flex;
-  justify-content: flex-start;
+  margin: 20px;
 }
+
+.options{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+//TEST

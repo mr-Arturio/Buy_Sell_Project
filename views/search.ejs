@@ -27,27 +27,22 @@
 
     <h1> Search Results</h1>
     <!-- products for the search bar showing -->
-    <div class="product-search">
-
-      <% for (const product of results ) { %>
-        <div class="product-box-search">
-          <img class="product-image-search" src="<%= product.photo %>" alt="<%=product.title %>">
-          <div class="product-info-search">
-            <text><strong>Title:</strong>
-              <%= product.title %>
-            </text>
-            <br>
-            <text><strong>Price:</strong>
-              <%= product.price %> CAD
-            </text>
-            <text><strong>Description:</strong>
-              <%= product.description %>
-            </text>
-            <br>
-            <text><strong>Category:</strong>
-              <%= product.category %>
-            </text>
-          </div>
+    <% for (const product of results ) { %>
+      <div class="product-box">
+        <img class="product-image" src="<%= product.photo %>" alt="<%=product.title %>">
+        <div class="product-info">
+          <h2>
+            <%= product.title %>
+          </h2>
+          <p>
+            <%= product.description %>
+          </p>
+          <p>
+            $<%= product.price %>
+          </p>
+          <p>
+            <%= product.category %>
+          </p>
         </div>
         <% } %>
 

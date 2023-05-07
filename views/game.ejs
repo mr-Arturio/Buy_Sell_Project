@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- supplied code -->
+
+<head>
+  <title>Home Page</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="/styles/carousel_styles.css"> -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+ <!--Font Awesome library -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <!-- icon script -->
+ <script src="scripts/icon.js"></script>
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/searchDatabase.js"></script>
+  <!-- <script type="text/javascript" src="/public/scripts/carousel_script.js"></script> -->
+</head>
+<!-- supplied code -->
+
+<body>
+
+  <!-- header link -->
+  <%- include('partials/header') %>
+
+    <!-- main content -->
+
+    <div class="products">
+      <% for (const product of products) { %>
+
+        <a class="product-box" href="http://localhost:8080/products/<%= product.id %>">
+
+          <img class="product-image" src="<%= product.photo %>" alt="<%= product.title %>">
+          <div class="product-info">
+            <text><strong>Title:</strong>
+              <%= product.title %>
+            </text>
+            <br>
+            <text><strong>Price:</strong>
+              $<%= product.price %> CAD
+            </text>
+          </div>
+<div class="icon">
+        <i class="fa-solid fa-heart fa-2xl" style="color: #191919;"></i>
+      </div>
+      </a>
+
+
+        <% } %>
+    </div>
+
+    <!-- </div> -->
+
+    <!-- FOOTER -->
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>
