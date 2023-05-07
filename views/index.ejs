@@ -27,6 +27,7 @@
   <script src="/scripts/addToFavorites_icon.js"></script>
   <script src="/vendor/jquery-3.0.0.js"></script>
 
+
   <!-- <script type="text/javascript" src="/public/scripts/carousel_script.js"></script> -->
 </head>
 <!-- supplied code -->
@@ -55,13 +56,13 @@
           <a href="http://localhost:8080/products/<%= products[i].id %>">
             <img class="product-image" src="<%= products[i].photo %>" alt="<%= products[i].title %>">
             <div class="product-info">
-              <text><strong>Title:</strong>
+              <strong>Title:</strong>
                 <%= products[i].title %>
-              </text>
+
           </a>
           <br>
           <text><strong>Price:</strong>
-            <%= products[i].price %> CAD
+            $<%= products[i].price %> CAD
           </text>
         </div>
         <div class="icon">
