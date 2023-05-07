@@ -1,0 +1,36 @@
+.product-view-body-search {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.products-search {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product-box-search {
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 33vh;
+  cursor: pointer;
+  display: flex;
+  color: blue;
+  border-style: solid;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.product-image-search {
+  width: 150px;
+  height: auto;
+}
+
+.product-info-search {
+  display: flex;
+  flex-direction: column;
+}

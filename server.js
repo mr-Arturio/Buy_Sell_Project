@@ -34,6 +34,7 @@ const productApiRoutes = require('./routes/products-api');
 const favoritesRoutes = require('./routes/favorites-api');
 const usersRoutes = require('./routes/users');
 const searchRoutes = require('./routes/search-routes');
+const sellProductRoutes = require('./routes/sell-product');
 const { DatabaseError } = require('pg');
 const pool = require('./db/connection');
 // Mount all resource routes
@@ -44,7 +45,8 @@ app.use('/api/users', userApiRoutes);
 app.use('/products', productApiRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/users', usersRoutes);
-app.use('/search', searchRoutes)
+app.use('/search', searchRoutes);
+app.use('/sell', sellProductRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -78,6 +80,18 @@ app.get('/index', (req, res) => {
     .then((result) => {
       const products = result.rows;
       res.render('index', { products });
+    })
+    .catch((err) => {
+      console.error('Error executing query', err.stack);
+      res.send('Error occurred while fetching data');
+    });
+});
+
+app.get('/favorites', (req, res) => {
+  pool.query('SELECT * FROM products')
+    .then((result) => {
+      const products = result.rows;
+      res.render('favorites', { products });
     })
     .catch((err) => {
       console.error('Error executing query', err.stack);

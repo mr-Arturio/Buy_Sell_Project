@@ -5,28 +5,11 @@ body {
   flex-direction: column;
   // justify-content: center;
   // align-items: center;
-  background-color: #e3d4e6;
+  background-color: rgb(25, 25, 25);
   min-width: 300px;
 }
 
 
-// ---------Product Box-----------
-.product-box{
-  display: flex;
-  border-style: solid;
-  justify-content: space-evenly;
-  flex-direction: row;
-  margin: 20px;
-}
 
-.product-info{
-  display: flex;
-  flex-direction: column;
-}
-
-// .product-image{
-//   width: 150px;
-//   height: auto;
-// }
 
 

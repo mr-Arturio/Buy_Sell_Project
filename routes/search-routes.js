@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
   const query = req.query.name
   searchQuery.searchDatabse(query)
   .then (results => {
-    console.log("RESULTS--->", results)
     res.render('search', {results} )
 
   })

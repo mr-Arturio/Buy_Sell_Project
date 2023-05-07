@@ -1,11 +1,12 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: rgb(204,204,204);
 }
 
 // ---------FEATURED LIST----------
-.carousel{
+.carousel {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -16,23 +17,64 @@ body{
 
 //---------LOCAL ITEMS-------------
 
-.products{
+.products {
   display: flex;
   width: 100%;
+  height: 80vh;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  color: rgb(204,204,204);
 }
 
 .product-box {
+  display: flex;
+  position: relative;
   width: 25%;
   box-sizing: border-box;
   padding: 10px;
-  height: 33vh;
+  height: 25vh;
+  display: flex;
+  // border-style: solid;
+  // border-color: #f94512;
+  background-color: rgb(55,55,55);
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 20px;
+  color: rgb(204,204,204);
+}
+
+
+.product-info{
+  display: flex;
+  flex-direction: column;
+  color: rgb(204,204,204);
+}
+
+.product-info a{
+  color: rgb(204,204,204);
+}
+
+a {
   cursor: pointer;
 }
 
-.product-image{
+.product-image {
   max-width: 20vh;
   max-height: 20vh;
+  margin-right: 10px;
   // border-style: solid;
 }
+
+
+.icon {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* add transition property */
+}
+
+.icon:hover {
+  transform: scale(1.2); /* increase size when hovering */
+}
+
