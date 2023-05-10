@@ -1,6 +1,6 @@
 # PlayNation 
 ___
-This is Buy/Sell Listing Website gamers oriented where you can buy or sell consoles, games or accessories.
+This is a Buy/Sell listing website oriented towards gamers, where you can buy or sell consoles, games, or accessories.
 Users can browse the website, view different categories, mark items as favorites, list items for sale, search for items by name, and more.
 Our app has an interactive and responsive carousel that can be modified to suit your needs
 
@@ -23,7 +23,7 @@ Home page at `http://localhost:8080/index`
 ![ERD TABLE](https://user-images.githubusercontent.com/17488154/236655550-6fc8ab33-1dfc-475b-ae49-bf05dd859ae7.png)
 
 
- ##Built With: 
+ ## Built With: 
 
 * HTML5 Markup
 * CSS
@@ -34,7 +34,7 @@ Home page at `http://localhost:8080/index`
 * PostgresSQL Database
 
 ___
-##Contributors
-[Artur Tereshchenko](https://github.com/mr-Arturio)
-[Rotimi Osuntola Jr](https://github.com/osuntol)
-[Daniel Soares](https://github.com/Daniel7763)
+## Contributors
+* [Artur Tereshchenko](https://github.com/mr-Arturio)
+* [Rotimi Osuntola Jr](https://github.com/osuntol)
+* [Daniel Soares](https://github.com/Daniel7763)
